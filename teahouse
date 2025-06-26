@@ -1,0 +1,20 @@
+tea <- data.frame(
+  Light = c("green", "chamomile"),
+  Bold = c("black", "rooibos")
+)
+
+tea <- as.matrix(tea)
+rownames(tea) <- c("Yes", "No")
+
+Flavor_p <- readline("Choose Flavor\n: Light/ Bold?")
+
+Caffeine_p <- readline("Do you prefer Caffiene?\n Yes/No  ")
+
+if((Caffeine_p %in% c("Yes", "No")) && (Flavor_p %in% c("Light", "Bold"))){
+      print(paste0(tea[Caffeine_p, Flavor_p], " tea"))
+   }else{
+      print("Wrong option")
+   }
+
+file.create("personal.R")
+
